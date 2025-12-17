@@ -5,82 +5,77 @@ import { ModelZoo } from './components/ModelZoo';
 import { SkillsMatrix } from './components/SkillsMatrix';
 import { ContactNode } from './components/ContactNode';
 import { Navbar } from './components/Navbar';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const App: React.FC = () => {
   const [bootSequence, setBootSequence] = useState(true);
 
-  // Simulate a boot sequence loader
   useEffect(() => {
     const timer = setTimeout(() => {
       setBootSequence(false);
-    }, 2500);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
   if (bootSequence) {
     return (
-      <div className="h-screen w-full bg-black flex flex-col items-center justify-center text-green-500 z-50">
-        <div className="w-64 border border-green-900 bg-black p-2 mb-4">
+      <div className="h-screen w-full bg-[#050505] flex flex-col items-center justify-center text-[#22c55e] z-50 font-mono">
+        <div className="w-64 border border-green-900 bg-black p-1 mb-4">
           <motion.div 
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
-            transition={{ duration: 2.2, ease: "linear" }}
-            className="h-full bg-green-500 h-2"
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="bg-[#22c55e] h-1 shadow-[0_0_15px_#22c55e]"
           />
         </div>
-        <div className="font-mono text-xs">
-           <motion.span
-             animate={{ opacity: [0, 1, 0] }}
-             transition={{ repeat: Infinity, duration: 0.5 }}
-           >
-             INITIALIZING NEURAL LINK...
-           </motion.span>
+        <div className="text-[10px] tracking-widest uppercase opacity-70">
+           System.booting... neural_link_v2.5
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-screen text-gray-200 selection:bg-green-500 selection:text-black">
+    <div className="relative min-h-screen selection:bg-[#22c55e] selection:text-black">
       <BackgroundGrid />
       
       <div className="relative z-10 flex flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Navbar />
         
-        <main className="flex-grow pt-24 pb-12 space-y-24">
+        <main className="flex-grow pt-28 pb-12 space-y-32">
           
-          <section id="terminal" className="scroll-mt-24">
+          <section id="terminal" className="scroll-mt-28">
             <Terminal />
           </section>
 
-          <section id="skills" className="scroll-mt-24">
-            <div className="mb-8 border-l-4 border-green-500 pl-4">
-              <h2 className="text-3xl font-bold text-white flex items-center">
-                <span className="text-green-500 mr-2">root@system:~/skills$</span> ./analyze_capabilities.sh
+          <section id="skills" className="scroll-mt-28">
+            <div className="mb-10 border-l-2 border-green-500 pl-6">
+              <h2 className="text-3xl font-bold text-white tracking-tight">
+                <span className="text-green-500/50 mr-3">#</span> ANALYZE_CAPABILITIES
               </h2>
             </div>
             <SkillsMatrix />
           </section>
 
-          <section id="projects" className="scroll-mt-24">
-            <div className="mb-8 border-l-4 border-purple-500 pl-4">
-              <h2 className="text-3xl font-bold text-white flex items-center">
-                <span className="text-purple-500 mr-2">root@system:~/projects$</span> ls -la ./model_zoo
+          <section id="projects" className="scroll-mt-28">
+            <div className="mb-10 border-l-2 border-purple-500 pl-6">
+              <h2 className="text-3xl font-bold text-white tracking-tight">
+                <span className="text-purple-500/50 mr-3">#</span> NEURAL_MODEL_ZOO
               </h2>
             </div>
             <ModelZoo />
           </section>
 
-          <section id="contact" className="scroll-mt-24">
+          <section id="contact" className="scroll-mt-28">
             <ContactNode />
           </section>
           
         </main>
 
-        <footer className="py-8 border-t border-green-900/30 text-center text-xs text-gray-500 font-mono">
-          <p>SYSTEM STATUS: ONLINE | LATENCY: 12ms</p>
-          <p className="mt-2">© {new Date().getFullYear()} CHANGYANG QIAN. ALL RIGHTS RESERVED.</p>
+        <footer className="py-12 border-t border-white/5 text-center font-mono opacity-40">
+          <p className="text-[10px] tracking-[0.2em] uppercase">
+            Neural Interface v2.5.0-LTS | Status: <span className="text-[#22c55e]">Optimal</span>
+          </p>
         </footer>
       </div>
     </div>
