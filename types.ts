@@ -1,4 +1,3 @@
-import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
 export interface Project {
@@ -6,40 +5,25 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  githubUrl?: string;
-  imageUrl?: string;
-  stats?: {
-    accuracy?: string;
-    modelType?: string;
-    dataset?: string;
+  githubUrl: string;
+  stats: {
+    modelType: string;
+    accuracy: string;
+    dataset: string;
   };
   award?: string;
 }
 
 export interface Skill {
   name: string;
-  level: number; // 0-100
+  level: number;
   category: 'language' | 'framework' | 'tool';
-  iconUrl?: string;
+  iconUrl: string;
 }
 
 export interface SocialLink {
   platform: string;
   url: string;
   label: string;
-  icon?: LucideIcon;
-}
-
-export enum TerminalLineType {
-  INPUT = 'INPUT',
-  OUTPUT = 'OUTPUT',
-  SYSTEM = 'SYSTEM',
-  ERROR = 'ERROR'
-}
-
-export interface TerminalLine {
-  id: string;
-  type: TerminalLineType;
-  content: React.ReactNode;
-  delay?: number;
+  icon: LucideIcon;
 }
