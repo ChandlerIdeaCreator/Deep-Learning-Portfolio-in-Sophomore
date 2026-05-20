@@ -53,6 +53,18 @@ export const PROJECTS: Project[] = [
       accuracy: "94.2%",
       dataset: "ChnSentiCorp"
     }
+  },
+  {
+    id: "p4",
+    title: "Claude Code×Deepseek-v4-pro 3D-Chess",
+    description: "An immersive 3D online/local chess platform built with highly advanced chess-engine heuristics, 3D graphics representation, and automated agent optimization. Fully co-engineered with Claude Code & Deepseek-v4-pro.",
+    tags: ["React Three Fiber", "Three.js", "Chess AI", "Heuristics", "TypeScript"],
+    githubUrl: "https://github.com/ChandlerIdeaCreator/3D-Chess",
+    stats: {
+      modelType: "Minimax / Alpha-Beta",
+      accuracy: "60FPS 3D Render",
+      dataset: "Full Chess Ruleset"
+    }
   }
 ];
 
