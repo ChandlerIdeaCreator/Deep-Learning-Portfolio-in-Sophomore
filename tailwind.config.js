@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       spacing: {
+        '50': '12.5rem',
         '100': '25rem',
       },
     },
