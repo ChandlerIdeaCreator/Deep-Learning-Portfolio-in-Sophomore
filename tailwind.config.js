@@ -8,7 +8,11 @@ export default {
     "./constants.tsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '100': '25rem',
+      },
+    },
   },
   plugins: [],
 }

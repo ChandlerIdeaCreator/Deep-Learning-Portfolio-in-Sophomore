@@ -26,12 +26,12 @@ export const Terminal: React.FC = () => {
             </div>
           </div>
           <motion.div 
-            className="relative shrink-0 self-center"
-            animate={{ scale: [1, 1.04, 1] }}
+            className="relative shrink-0 self-center max-w-full"
+            animate={{ scale: [1, 1.02, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
             <div className="absolute -inset-1.5 bg-gradient-to-r from-[#22c55e] to-purple-500 rounded-xl blur opacity-50 animate-pulse-glow"></div>
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden border border-[#22c55e]/40 bg-black/60 flex items-center justify-center p-2 shadow-[0_0_25px_rgba(34,197,94,0.25)]">
+            <div className="relative w-100 h-100 max-w-full rounded-xl overflow-hidden border border-[#22c55e]/40 bg-black/60 flex items-center justify-center p-3 shadow-[0_0_25px_rgba(34,197,94,0.25)]">
               <img 
                 src="https://media.giphy.com/media/AFdcYElkoNAUE/giphy.gif" 
                 alt="Pikachu" 
