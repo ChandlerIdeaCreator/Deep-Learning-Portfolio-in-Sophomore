@@ -15,18 +15,51 @@ export const Terminal: React.FC = () => {
           neural_terminal_v2.5
         </div>
       </div>
-      <div className="p-8 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-white/5">
-          <div className="flex items-start gap-4">
-            <span className="text-[#22c55e] shrink-0 mt-1.5">➜</span>
-            <div className="space-y-1">
-              <div className="text-white/40 text-xs uppercase tracking-widest">Identify & Role</div>
-              <div className="text-3xl font-bold text-white tracking-tight">{PROFILE.name}</div>
-              <div className="text-lg text-[#22c55e] font-mono mt-1">{PROFILE.role}</div>
+      <div className="p-8">
+        <div className="flex flex-col sm:flex-row gap-8 justify-between items-start">
+          {/* Left Column: Terminal Data Blocks */}
+          <div className="flex-1 space-y-6 w-full">
+            {/* Identify & Role */}
+            <div className="flex items-start gap-4 pb-4 border-b border-white/5">
+              <span className="text-[#22c55e] shrink-0 mt-1.5">➜</span>
+              <div className="space-y-1">
+                <div className="text-white/40 text-xs uppercase tracking-widest">Identify & Role</div>
+                <div className="text-3xl font-bold text-white tracking-tight">{PROFILE.name}</div>
+                <div className="text-lg text-[#22c55e] font-mono mt-1">{PROFILE.role}</div>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="flex items-start gap-4 pb-4 border-b border-white/5">
+              <span className="text-[#22c55e] shrink-0">➜</span>
+              <div className="space-y-1">
+                <div className="text-white/40 text-xs uppercase tracking-widest">Education</div>
+                <div className="text-white/80">
+                  {PROFILE.university} — {PROFILE.major}
+                  <div className="text-[#22c55e] mt-1">GPA: {PROFILE.gpa}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bio_Data */}
+            <div className="flex items-start gap-4">
+              <span className="text-[#22c55e] shrink-0">➜</span>
+              <div className="space-y-2">
+                <div className="text-white/40 text-xs uppercase tracking-widest">Bio_Data</div>
+                <div className="space-y-1">
+                  {PROFILE.bio.map((line, i) => (
+                    <div key={i} className="text-white/60 leading-relaxed">
+                      {line}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Right Column: Interactive Graphic */}
           <motion.div 
-            className="relative shrink-0 self-center max-w-full"
+            className="relative shrink-0 self-center sm:self-start max-w-full"
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
@@ -40,31 +73,6 @@ export const Terminal: React.FC = () => {
               />
             </div>
           </motion.div>
-        </div>
-
-        <div className="flex items-start gap-4">
-          <span className="text-[#22c55e] shrink-0">➜</span>
-          <div className="space-y-1">
-            <div className="text-white/40 text-xs uppercase tracking-widest">Education</div>
-            <div className="text-white/80">
-              {PROFILE.university} — {PROFILE.major}
-              <div className="text-[#22c55e] mt-1">GPA: {PROFILE.gpa}</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-4">
-          <span className="text-[#22c55e] shrink-0">➜</span>
-          <div className="space-y-2">
-            <div className="text-white/40 text-xs uppercase tracking-widest">Bio_Data</div>
-            <div className="space-y-1">
-              {PROFILE.bio.map((line, i) => (
-                <div key={i} className="text-white/60 leading-relaxed">
-                  {line}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
