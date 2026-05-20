@@ -16,20 +16,30 @@ export const Terminal: React.FC = () => {
         </div>
       </div>
       <div className="p-8 space-y-6">
-        <div className="flex items-start gap-4">
-          <span className="text-[#22c55e] shrink-0">➜</span>
-          <div className="space-y-1">
-            <div className="text-white/40 text-xs uppercase tracking-widest">Identify</div>
-            <div className="text-2xl font-bold text-white">{PROFILE.name}</div>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-white/5">
+          <div className="flex items-start gap-4">
+            <span className="text-[#22c55e] shrink-0 mt-1.5">➜</span>
+            <div className="space-y-1">
+              <div className="text-white/40 text-xs uppercase tracking-widest">Identify & Role</div>
+              <div className="text-3xl font-bold text-white tracking-tight">{PROFILE.name}</div>
+              <div className="text-lg text-[#22c55e] font-mono mt-1">{PROFILE.role}</div>
+            </div>
           </div>
-        </div>
-        
-        <div className="flex items-start gap-4">
-          <span className="text-[#22c55e] shrink-0">➜</span>
-          <div className="space-y-1">
-            <div className="text-white/40 text-xs uppercase tracking-widest">Role</div>
-            <div className="text-lg text-white/80">{PROFILE.role}</div>
-          </div>
+          <motion.div 
+            className="relative shrink-0 self-center"
+            animate={{ scale: [1, 1.04, 1] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          >
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-[#22c55e] to-purple-500 rounded-xl blur opacity-50 animate-pulse-glow"></div>
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden border border-[#22c55e]/40 bg-black/60 flex items-center justify-center p-2 shadow-[0_0_25px_rgba(34,197,94,0.25)]">
+              <img 
+                src="https://media.giphy.com/media/AFdcYElkoNAUE/giphy.gif" 
+                alt="Pikachu" 
+                className="w-full h-full object-contain rounded-lg"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
         </div>
 
         <div className="flex items-start gap-4">
