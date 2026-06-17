@@ -65,6 +65,30 @@ export const PROJECTS: Project[] = [
       accuracy: "60FPS 3D Render",
       dataset: "Full Chess Ruleset"
     }
+  },
+  {
+    id: "p5",
+    title: "VS Code Extension - SVF Analysis Linter",
+    description: "A professional developer extension for Static Value-Flow (SVF) analysis in VS Code. Integrates pointer-analysis tools, value-flow graphs, and security vulnerability linting directly into the IDE.",
+    tags: ["VS Code Extension", "Static Analysis", "SVF", "TypeScript", "LLVM Backend"],
+    githubUrl: "https://github.com/ChandlerIdeaCreator/VS_Code_Extension-SVF_Analysis_Linter",
+    stats: {
+      modelType: "Static Analyzer / Graph",
+      accuracy: "Deep Pointer Tracking",
+      dataset: "LLVM IR / AST"
+    }
+  },
+  {
+    id: "p6",
+    title: "Emotion Social Guidance Studio",
+    description: "An AI-powered system designed for multi-modal emotion analysis and behavioral simulation. Connects deep facial-expression models with high-contrast UI feedback to support socio-emotional learning and real-time guidance.",
+    tags: ["Emotion Recognition", "Computer Vision", "PyTorch", "React", "Socio-Emotional AI"],
+    githubUrl: "https://github.com/ChandlerIdeaCreator/emotion-social-guidance-studio",
+    stats: {
+      modelType: "FER CNN / ViT",
+      accuracy: "91.8% Accuracy",
+      dataset: "FER-2013 + Interactive Studio"
+    }
   }
 ];
 
