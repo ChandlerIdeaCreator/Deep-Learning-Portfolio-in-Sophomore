@@ -6,7 +6,7 @@ export const PROFILE = {
   role: "Deep Learning Researcher",
   university: "Northeastern University (NEU)",
   major: "Computer Science and Technology",
-  gpa: "3.89 (Rank 4/123)",
+  gpa: "3.91 (Rank 4/123)",
   bio: [
     "Sophomore in Computer Science & Tech at NEU.",
     "Passion: Deep Learning (Theory & Practice) & Computer Vision.",
